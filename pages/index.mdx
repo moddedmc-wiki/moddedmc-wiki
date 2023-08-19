@@ -1,0 +1,113 @@
+---
+title: moddedmc.wiki
+---
+
+import { Callout } from "nextra/components";
+import { Contributors } from "components/Contributors";
+import { motion } from "framer-motion";
+
+export function Motioner({ index, children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: Math.min(0.25 + index * 0.2, 0.8) }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function Link({ title, url, description, index }) {
+  return (
+    <Motioner index={index}>
+      <a href={url}>
+        <div className="h-full text-white max-w-xs my-auto rounded-xl transition-all duration-500 bg-gradient-to-tl from-green-400 via-green-500 to-green-800 bg-size-200 bg-pos-0 hover:bg-pos-100 p-4 py-5 px-5">
+          <h3 className="text-md font-bold">{title}</h3>
+          <p>{description}</p>
+          <svg
+            width="2rem"
+            className="ml-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </a>
+    </Motioner>
+  );
+}
+
+{
+
+<section>
+<div className="min-[900px]:m-20 m-5 bg flex flex-col">
+  <div className="flex flex-row pb-2">
+    <div className="md:basis-1/2">
+      <Motioner index={0}><h1 className="pb-1.5 leading-relaxed bg-clip-text font-extrabold text-transparent md:text-5xl text-3xl bg-gradient-to-r from-green-500 to-green-300">
+        A collection of resources that can aid you through using, creating and configuring mods.
+      </h1></Motioner>
+      <Motioner index={1}>
+      <p className="pt-5 font-medium lg:text-lg dark:text-neutral-200 text-slate-700">
+        Whether you're a developer or not, our resources ensure your knowledge installing, creating, and using mods for Minecraft: Java Edition are clear and concise, regardless of the modloader you use.
+      </p>
+      </Motioner>
+    </div>
+  </div>
+  <div className="grid md:grid-cols-4 grid-cols-1 gap-4 p-10 mx-auto">
+      <Link index={2} url="https://fabric.moddedmc.wiki/" title="Fabric Modding Wiki" description="A great resource for anyone looking to create Minecraft mods using the Fabric Loader."/>
+      <Link index={3} url="https://forge.moddedmc.wiki" title="Forge Community Wiki (gemwire)" description="A great resource for anyone looking to create Minecraft mods using the Forge Loader."/>
+      <Link index={4} url="https://github.com/moddedmc/awesome-moddedmc" title="Awesome Modded Minecraft" description="An 'awesome' collection of tools, guides and resources related to modding Minecraft: Java Edition."/>
+      <Link index={5} url="/blog" title="Blog" description="Stay up-to-date with the state of modding!"/>
+  </div>
+</div>
+
+  <div className="px-16 pb-8 px-auto mx-auto max-w-screen-xl lg:pb-16 lg:px-12">
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-nonemd:text-2xl lg:text-3xl text-white">
+      About
+    </h2>
+    <p className="text-lg font-normal my-2 lg:text-xl text-gray-400">
+      The birth of the Modded Minecraft Wiki was sparked by a clear community need – there wasn't enough easy-to-follow information about Minecraft modding. <br /><br />
+      Recognizing this gap, we teamed up to simplify things. 
+      The wikis emerged as a collaborative effort to make modding more accessible and provide a platform for all kinds of enthusiasts. 
+      Built on the idea of openness, this project is open-source, welcoming anyone who loves Minecraft to contribute their insights.<br /><br />
+      It's a big collaboration that's always expanding.
+      <br /><br />
+      The Modded Minecraft Wiki isn't just for coding pros – though it's definitely a treasure trove for them.
+      It's more than that. It's for all of us – regular players, too.
+      We've got guides to help you out, whether you've just bought Minecraft or are a technical redstone player.
+      Whether you're diving into code details or just looking to enhance your gaming experience, the Modded Minecraft Wiki is your trusty companion.
+      </p>
+
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none md:text-2xl lg:text-3xl text-white">
+      Contributing
+    </h2>
+    <p className="text-lg font-normal my-2lg:text-xl dark:text-gray-400">
+      Anyone can contribute to any of the wikis - as long as you follow the contribution guidelines of the wiki you want to contribute to.
+      <br /><br />
+      Interested in writing blogs for us? Send us a message on <a className="text-green-600 hover:text-green-700" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">our discord server</a>.
+      <br /><br />
+      Once you've made sure your contribution is fit for the wiki, simply open a pull request to the GitHub repository.
+    </p>
+
+    <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
+      Legal
+    </h2>
+    <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
+      All pages on this website are licensed under the <a className="text-green-600 hover:text-green-700" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a>
+      <br /><br />
+      Any external links or resources present on wiki pages are not under the license - using these are at your own risk - we cannot ensure your safety when using external resources.
+      <br /><br />
+      Any legal requests must be directed to mineblock11 via <a className="text-cyan-700 hover:text-cyan-800 dark:text-green-600 dark:hover:text-green-700" target="_blank" href="mailto:contact@mineblock11.dev">contact@mineblock11.dev</a>
+    </p>
+
+  </div>
+</section>
+}
