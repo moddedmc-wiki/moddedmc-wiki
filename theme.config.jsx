@@ -61,7 +61,7 @@ export default {
     forcedTheme: "dark",
   },
   primaryHue: {
-    dark: 24,
+    dark: 142,
   },
   sidebar: {
     toggleButton: true,

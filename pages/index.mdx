@@ -61,15 +61,21 @@ export function Link({ title, url, description, index }) {
       </Motioner>
     </div>
   </div>
-  <div className="grid md:grid-cols-4 grid-cols-1 gap-4 p-10 mx-auto">
+  <div className="grid md:grid-cols-4 grid-cols-1 gap-4 pt-10 pb-4 mx-auto">
       <Link index={2} url="https://fabric.moddedmc.wiki/" title="Fabric Modding Wiki" description="A great resource for anyone looking to create Minecraft mods using the Fabric Loader."/>
       <Link index={3} url="https://forge.moddedmc.wiki" title="Forge Community Wiki (gemwire)" description="A great resource for anyone looking to create Minecraft mods using the Forge Loader."/>
       <Link index={4} url="https://github.com/moddedmc/awesome-moddedmc" title="Awesome Modded Minecraft" description="An 'awesome' collection of tools, guides and resources related to modding Minecraft: Java Edition."/>
-      <Link index={5} url="/blog" title="Blog" description="Stay up-to-date with the state of modding!"/>
+      <Motioner index={5}>
+        <div className="h-full text-white max-w-xs my-auto rounded-xl transition-all duration-500 bg-gradient-to-tl from-neutral-400 via-neutral-500 to-neutral-800 bg-size-200 bg-pos-0 hover:bg-pos-100 p-4 py-5 px-5">
+          <h3 className="text-md font-bold">Blog</h3>
+          <p>Coming Soon...</p>
+        </div>
+    </Motioner>
   </div>
 </div>
 
   <div className="px-16 pb-8 px-auto mx-auto max-w-screen-xl lg:pb-16 lg:px-12">
+    <Motioner index={6}>
     <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-nonemd:text-2xl lg:text-3xl text-white">
       About
     </h2>
@@ -80,12 +86,14 @@ export function Link({ title, url, description, index }) {
       Built on the idea of openness, this project is open-source, welcoming anyone who loves Minecraft to contribute their insights.<br /><br />
       It's a big collaboration that's always expanding.
       <br /><br />
-      The Modded Minecraft Wiki isn't just for coding pros – though it's definitely a treasure trove for them.
+      The Modded Minecraft Wiki isn't just for developers – though it's definitely a treasure trove for them.
       It's more than that. It's for all of us – regular players, too.
+      <br /><br />
       We've got guides to help you out, whether you've just bought Minecraft or are a technical redstone player.
       Whether you're diving into code details or just looking to enhance your gaming experience, the Modded Minecraft Wiki is your trusty companion.
       </p>
-
+    </Motioner>
+    <Motioner index={7}>
     <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none md:text-2xl lg:text-3xl text-white">
       Contributing
     </h2>
@@ -96,18 +104,15 @@ export function Link({ title, url, description, index }) {
       <br /><br />
       Once you've made sure your contribution is fit for the wiki, simply open a pull request to the GitHub repository.
     </p>
-
+    </Motioner>
+    <Motioner index={8}>
     <h2 className="text-2xl my-4 font-extrabold tracking-tight leading-none text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
       Legal
     </h2>
     <p className="text-lg font-normal my-2 text-gray-500 lg:text-xl dark:text-gray-400">
-      All pages on this website are licensed under the <a className="text-green-600 hover:text-green-700" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a>
-      <br /><br />
-      Any external links or resources present on wiki pages are not under the license - using these are at your own risk - we cannot ensure your safety when using external resources.
-      <br /><br />
       Any legal requests must be directed to mineblock11 via <a className="text-cyan-700 hover:text-cyan-800 dark:text-green-600 dark:hover:text-green-700" target="_blank" href="mailto:contact@mineblock11.dev">contact@mineblock11.dev</a>
     </p>
-
+    </Motioner>
   </div>
 </section>
 }
