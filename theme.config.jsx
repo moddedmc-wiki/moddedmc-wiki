@@ -23,6 +23,9 @@ export default {
       <link rel="icon" type="image/png" href="/icon_full.png" />
     </>
   ),
+  search: {
+    component: <></>,
+  },
   useNextSeoProps: () => {
     const { route } = useRouter();
     const { frontMatter } = useConfig();
